@@ -1,0 +1,100 @@
+[
+  {
+    "name": "Western North Carolina Recovery Housing Resources",
+    "city": "Asheville",
+    "state": "NC",
+    "region": "Western North Carolina",
+    "need": "housing",
+    "constraints": [
+      "accessible",
+      "family",
+      "pet_friendly"
+    ],
+    "verified": true,
+    "description": "Recovery information for residents seeking temporary housing and local assistance after Hurricane Helene.",
+    "eligibility": "Availability and program eligibility vary by provider; confirm current requirements using the source page.",
+    "source_date": "2024-10-15",
+    "source_url": "https://www.wncw.org/news/2024-10-15/hurricane-helene-aftermath-updates-and-resources"
+  },
+  {
+    "name": "FEMA Aid Information \u2014 North Carolina",
+    "city": "Asheville",
+    "state": "NC",
+    "region": "Western North Carolina",
+    "need": "financial",
+    "constraints": [
+      "accessible",
+      "no_car",
+      "family"
+    ],
+    "verified": true,
+    "description": "Information about federal disaster-assistance access after Hurricane Helene.",
+    "eligibility": "Eligibility depends on disaster area, losses, insurance status, and current program rules.",
+    "source_date": "2024",
+    "source_url": "https://www.propublica.org/article/fema-aid-hurricane-helene-income-disparities"
+  },
+  {
+    "name": "Hurricane Helene Documentation Guidance Context",
+    "city": "Asheville",
+    "state": "NC",
+    "region": "Western North Carolina",
+    "need": "documents",
+    "constraints": [
+      "accessible",
+      "family"
+    ],
+    "verified": true,
+    "description": "Information about aid and documentation challenges after Hurricane Helene.",
+    "eligibility": "Use the source for context and verify current application rules with the responsible agency.",
+    "source_date": "2024",
+    "source_url": "https://www.propublica.org/article/fema-aid-hurricane-helene-income-disparities"
+  },
+  {
+    "name": "Texas Hill Country Flood Recovery Information",
+    "city": "Kerrville",
+    "state": "TX",
+    "region": "Texas Hill Country",
+    "need": "housing",
+    "constraints": [
+      "family",
+      "accessible"
+    ],
+    "verified": true,
+    "description": "Curated flood-recovery context for communities affected by Texas Hill Country flash flooding.",
+    "eligibility": "Specific shelter or housing rules vary by provider; verify availability before travel.",
+    "source_date": "2025-07-11",
+    "source_url": "https://www.texastribune.org/2025/07/11/texas-hill-country-floods-what-we-know/"
+  },
+  {
+    "name": "Texas Hill Country Flood Transportation Context",
+    "city": "Kerrville",
+    "state": "TX",
+    "region": "Texas Hill Country",
+    "need": "transportation",
+    "constraints": [
+      "no_car",
+      "family"
+    ],
+    "verified": true,
+    "description": "Source-backed situational information for evaluating travel and access during flood recovery.",
+    "eligibility": "Informational resource; transportation availability depends on local services.",
+    "source_date": "2025",
+    "source_url": "https://apnews.com/article/aec9181a07d3ce8ff85197922e108b13"
+  },
+  {
+    "name": "Texas Hill Country Flood Medical/Safety Context",
+    "city": "Kerrville",
+    "state": "TX",
+    "region": "Texas Hill Country",
+    "need": "medical",
+    "constraints": [
+      "accessible",
+      "family"
+    ],
+    "verified": true,
+    "description": "Source-backed reporting on flood impacts for verifying current disaster context before seeking local support.",
+    "eligibility": "Informational only; for urgent medical emergencies use local emergency services.",
+    "source_date": "2025-07-11",
+    "source_url": "https://www.texastribune.org/2025/07/11/texas-hill-country-floods-what-we-know/"
+  }
+]

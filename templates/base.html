@@ -1,0 +1,4 @@
+{% load static %}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{% block title %}ReliefRoute{% endblock %}</title><link rel="stylesheet" href="{% static 'relief/styles.css' %}"></head><body>
+<header class="site-header"><a class="brand" href="{% url 'relief:home' %}"><span class="brand-mark">RR</span><span>ReliefRoute</span></a><nav><a href="{% url 'relief:chat' %}">Ask ReliefRoute</a><a href="{% url 'relief:resource_finder' %}">Find Help</a></nav></header>
+<main class="page-shell">{% block content %}{% endblock %}</main><footer>ReliefRoute provides source-backed disaster recovery information. Verify urgent safety guidance with official authorities.</footer></body></html>
