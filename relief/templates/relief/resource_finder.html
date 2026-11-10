@@ -1,1 +1,219 @@
-{% extends "base.html" %}{% block title %}Find Help · ReliefRoute{% endblock %}{% block content %}<section class="page-heading"><p class="eyebrow">Story #13 · Prioritized Resource Finder</p><h1>Find verified recovery resources</h1><p>Tell us where you are, what you need, and any constraints that affect what help is practical.</p></section><div class="finder-layout"><aside class="panel finder-form"><form method="get" class="stacked-form"><label for="{{ form.location.id_for_label }}">Your location</label>{{ form.location }}<label for="{{ form.need.id_for_label }}">Most urgent need</label>{{ form.need }}<fieldset><legend>Key constraints</legend><div class="checkbox-list">{{ form.constraints }}</div></fieldset><button class="button primary" type="submit">Find resources</button></form></aside><section class="results-column">{% if results is not None %}{% if results %}<div class="results-heading"><div><p class="eyebrow">Best matches first</p><h2>Prioritized results</h2></div><span class="source-count">{{ results|length }} match{{ results|length|pluralize:"es" }}</span></div>{% for resource in results %}<article class="resource-card"><div class="resource-card-top"><div><span class="verified-badge">✓ Verified</span><span class="metadata-chip">{{ resource.city }}{% if resource.state %}, {{ resource.state }}{% endif %}</span></div><span class="match-score">Match {{ resource.score }}</span></div><h3>{{ resource.name }}</h3><p>{{ resource.description }}</p><dl class="resource-details"><div><dt>Eligibility</dt><dd>{{ resource.eligibility }}</dd></div><div><dt>Why it matched</dt><dd>{{ resource.match_reason }}</dd></div><div><dt>Source date</dt><dd>{{ resource.source_date }}</dd></div></dl><a class="button secondary" href="{{ resource.source_url }}" target="_blank" rel="noopener noreferrer">View official/source page ↗</a></article>{% endfor %}{% else %}<div class="empty-state"><h2>No matching verified resources</h2><p>Try a nearby city, a broader need category, or fewer constraints.</p></div>{% endif %}{% else %}<div class="empty-state large"><h2>Your prioritized results will appear here.</h2><p>Use the form to search the curated resource dataset.</p></div>{% endif %}</section></div>{% endblock %}
+{% extends "base.html" %}
+
+{% block title %}Find Help · ReliefRoute{% endblock %}
+
+{% block content %}
+
+<section class="page-heading">
+
+  <h1>
+    Find verified recovery resources
+  </h1>
+
+  <p>
+    Tell us where you are what you need and any constraints that affect what help is practical.
+  </p>
+
+</section>
+
+
+<div class="finder-layout">
+
+  <aside class="panel finder-form">
+
+    <form method="get" class="stacked-form">
+
+      <label for="{{ form.location.id_for_label }}">
+        Your location
+      </label>
+
+      {{ form.location }}
+
+
+      <label for="{{ form.need.id_for_label }}">
+        Most urgent need
+      </label>
+
+      {{ form.need }}
+
+
+      <fieldset>
+
+        <legend>
+          Key constraints
+        </legend>
+
+        <div class="checkbox-list">
+          {{ form.constraints }}
+        </div>
+
+      </fieldset>
+
+
+      <button class="button primary" type="submit">
+        Find resources
+      </button>
+
+    </form>
+
+  </aside>
+
+
+  <section class="results-column">
+
+    {% if results is not None %}
+
+      {% if results %}
+
+        <div class="results-heading">
+
+          <div>
+            <p class="eyebrow">
+              Best matches first
+            </p>
+
+            <h2>
+              Prioritized results
+            </h2>
+          </div>
+
+
+          <span class="source-count">
+            {{ results|length }}
+            match{{ results|length|pluralize:"es" }}
+          </span>
+
+        </div>
+
+
+        {% for resource in results %}
+
+          <article class="resource-card">
+
+            <div class="resource-card-top">
+
+              <div>
+
+                <span class="verified-badge">
+                  ✓ Verified
+                </span>
+
+                <span class="metadata-chip">
+
+                  {{ resource.city }}
+
+                  {% if resource.state %}
+                    , {{ resource.state }}
+                  {% endif %}
+
+                </span>
+
+              </div>
+
+
+              <span class="match-score">
+                Match {{ resource.score }}
+              </span>
+
+            </div>
+
+
+            <h3>
+              {{ resource.name }}
+            </h3>
+
+
+            <p>
+              {{ resource.description }}
+            </p>
+
+
+            <dl class="resource-details">
+
+              <div>
+                <dt>
+                  Eligibility
+                </dt>
+
+                <dd>
+                  {{ resource.eligibility }}
+                </dd>
+              </div>
+
+
+              <div>
+                <dt>
+                  Why it matched
+                </dt>
+
+                <dd>
+                  {{ resource.match_reason }}
+                </dd>
+              </div>
+
+
+              <div>
+                <dt>
+                  Source date
+                </dt>
+
+                <dd>
+                  {{ resource.source_date }}
+                </dd>
+              </div>
+
+            </dl>
+
+
+            <a
+              class="button secondary"
+              href="{{ resource.source_url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View official/source page ↗
+            </a>
+
+          </article>
+
+        {% endfor %}
+
+
+      {% else %}
+
+        <div class="empty-state">
+
+          <h2>
+            No matching verified resources
+          </h2>
+
+          <p>
+            Try a nearby city a broader need category or fewer constraints.
+          </p>
+
+        </div>
+
+      {% endif %}
+
+
+    {% else %}
+
+      <div class="empty-state large">
+
+        <h2>
+          Your prioritized results will appear here.
+        </h2>
+
+        <p>
+          Use the form to search the curated resource dataset.
+        </p>
+
+      </div>
+
+    {% endif %}
+
+  </section>
+
+</div>
+
+{% endblock %}
