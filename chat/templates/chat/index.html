@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Ask ReliefRoute{% endblock %}
+
+{% block extra_head %}<link rel="stylesheet" href="{% static 'chat/chat.css' %}">{% endblock %}
+
+{% block content %}
+<section class="page-heading">
+  <h1>Ask ReliefRoute</h1>
+  <p>Ask a hurricane or flood preparedness and recovery question. Answers come only from ReliefRoute's curated sources, which are listed under each reply.</p>
+</section>
+
+<section class="chat-panel" aria-label="Chat with ReliefRoute">
+  <div id="chat-log" class="chat-log" role="log" aria-live="polite">
+    <div class="chat-msg bot">
+      <div class="chat-bubble intro">
+        Hi! I can answer questions using ReliefRoute's disaster preparedness and recovery sources.
+        Try: <button type="button" class="chat-suggestion">What should I pack in an evacuation go-bag?</button>
+        <button type="button" class="chat-suggestion">How do I apply for FEMA assistance?</button>
+      </div>
+    </div>
+  </div>
+
+  <form id="chat-form" class="chat-form" data-endpoint="{% url 'chat:ask' %}">
+    {% csrf_token %}
+    <textarea id="chat-input" name="question" rows="2" maxlength="{{ max_chars }}"
+      placeholder="Ask a disaster preparedness or recovery question…" aria-label="Your question" required></textarea>
+    <button id="chat-send" class="button primary" type="submit">Send</button>
+  </form>
+  <p class="chat-hint">Press Enter to send, Shift+Enter for a new line. For emergencies, call 911.</p>
+</section>
+{% endblock %}
+
+{% block extra_js %}<script src="{% static 'chat/chat.js' %}" defer></script>{% endblock %}
