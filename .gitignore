@@ -8,3 +8,6 @@ __pycache__/
 *.pyd
 .env
 staticfiles/
+.env.*
+!.env.example
+media/

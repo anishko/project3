@@ -1,1 +1,5 @@
 Django>=5.1,<6.0
+python-dotenv>=1.0
+numpy>=1.26
+openai>=1.40
+pypdf>=4.0

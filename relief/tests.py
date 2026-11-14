@@ -11,10 +11,12 @@ class Story4CitationTests(SimpleTestCase):
     def test_missing_source_metadata_is_not_fabricated(self):
         self.assertEqual(normalize_rag_response({"answer":"Answer","sources":[{}]})["citations"],[])
 
-class Story4ViewTests(TestCase):
-    def test_chat_page_shows_source_section_after_question(self):
-        r=self.client.post(reverse("relief:chat"),{"question":"What happened after Hurricane Helene?"})
-        self.assertContains(r,"Sources used"); self.assertContains(r,"ProPublica")
+    def test_source_without_url_is_kept_when_titled(self):
+        result=normalize_rag_response({"answer":"A","sources":[{"title":"Pasted guide","url":""},{"title":"Pasted guide","url":""}]})
+        self.assertEqual([c.title for c in result["citations"]],["Pasted guide"])
+
+# The Story #4 chat page is now the interactive page in the `chat` app (see chat/tests.py),
+# which reuses normalize_rag_response() and the same source-card styles.
 
 class Story13ResourceFinderTests(TestCase):
     def test_matching_resource_results_render(self):
